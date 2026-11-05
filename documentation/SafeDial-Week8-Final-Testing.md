@@ -38,7 +38,7 @@ works correctly before the final CAPACITI presentation.
 ## 4. Testing Environment
 
 Website:
-https://nifisom-cyber.github.io/safedial-month2/
+https://nifisom-cyber.github.io/Safedial-month2/
 
 Testing Method:
 Manual browser testing.

@@ -42,7 +42,7 @@ Campaign results and analytics figures are fictional examples until a real campa
 
 ## Live Website
 
-https://nifisom-cyber.github.io/safedial-month2/
+https://nifisom-cyber.github.io/Safedial-month2/
 
 The campaign landing page and five-KPI dashboard are included in the live application. The dashboard figures are fictional examples; GA4 is not connected.
 

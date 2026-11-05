@@ -50,7 +50,7 @@ Use one descriptive page title and meta description per indexable page, descript
 
 ## Proposed Paid-Search Advertisement
 
-**Final URL:** `https://nifisom-cyber.github.io/safedial-month2/campaign`  
+**Final URL:** `https://nifisom-cyber.github.io/Safedial-month2/campaign`  
 **Display path:** `SafeDial / Safety-Info`
 
 **Headlines**

@@ -12,13 +12,13 @@ if (redirect && redirect.startsWith('/') && !redirect.startsWith('//')) {
   window.history.replaceState(
     null,
     '',
-    '/safedial-month2' + redirect
+    '/Safedial-month2' + redirect
   );
 }
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/safedial-month2">
+    <BrowserRouter basename="/Safedial-month2">
       <App />
     </BrowserRouter>
   </StrictMode>,

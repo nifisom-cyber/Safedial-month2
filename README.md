@@ -15,6 +15,7 @@ simple, accessible and easy to understand.
 - Home Page
 - Campaign Landing Page
 - Campaign QR Code
+- Offline access after first connected visit
 - Emergency Services
 - Emergency Services Search Function
 - Copy Emergency Number Button

@@ -16,6 +16,14 @@ if (redirect && redirect.startsWith('/') && !redirect.startsWith('//')) {
   );
 }
 
+if (import.meta.env.PROD && 'serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker
+      .register(`${import.meta.env.BASE_URL}sw.js`)
+      .catch((error) => console.error('SafeDial offline support could not start.', error))
+  })
+}
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter basename="/Safedial-month2">

@@ -33,6 +33,7 @@ works correctly before the final CAPACITI presentation.
 | Safety Enquiries | Accepts demo input and displays confirmation | Passed |
 | Analytics Dashboard | Displays five sample KPI cards and chart | Passed |
 | Campaign Landing Page | Opens and displays campaign content | Passed |
+| Offline Access | Cached app routes and campaign images load after first online visit | Passed locally |
 | Mobile Responsiveness | Website fits mobile screens | Passed |
 
 ## 4. Testing Environment
@@ -267,6 +268,20 @@ The mobile viewport had no horizontal overflow.
 
 Note:
 Dashboard figures remain fictional sample data. GA4 is not connected.
+
+### Test 13: Offline Access
+
+Status: Passed in local production preview
+
+Result:
+After the first online visit, the service worker cached the app shell,
+JavaScript, styles, and images. With network requests blocked, client-side
+navigation to Campaign still displayed all five posts and the campaign QR.
+
+Limitations:
+The site must be opened online once to install the service worker and cache
+the files. An offline fallback page provides emergency numbers if the app
+shell is unavailable. Placing calls still requires mobile service.
 
 ## 6. Bugs and Improvements
 

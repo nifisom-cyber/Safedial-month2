@@ -1,8 +1,10 @@
 
+import featureImage from '../assets/feature.jpg'
+
 function About() {
   return (
-    <div>
-      <h1>About SafeDial 💚</h1>
+    <div className="about-page">
+      <h1>About SafeDial </h1>
 
       <h2>Help Is One Dial Away!</h2>
 
@@ -42,6 +44,12 @@ function About() {
         SafeDial is a developing project and is not
         a replacement for official emergency services.
       </p>
+
+      <img
+        className="about-page-image"
+        src={featureImage}
+        alt="SafeDial community safety network connecting families to emergency support"
+      />
     </div>
   )
 }

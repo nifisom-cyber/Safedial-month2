@@ -49,6 +49,12 @@ function Analytics() {
     <h2>{campaignData.enquiries}</h2>
     <p>Target: 20 enquiries</p>
   </div>
+
+  <div className="analytics-card">
+    <h3>Engagement Rate</h3>
+    <h2>{campaignData.engagementRate}%</h2>
+    <p>Target: 50%</p>
+  </div>
 </div>
 
 <section className="analytics-chart">
@@ -56,15 +62,16 @@ function Analytics() {
   <p>Fictional sample results for a proposed 30-day campaign.</p>
 
   {[
-    { name: 'Website Visits', actual: 245, target: 300 },
-    { name: 'Emergency Clicks', actual: 52, target: 60 },
-    { name: 'Safety Tips Views', actual: 38, target: 40 },
-    { name: 'Demo Enquiries', actual: 16, target: 20 }
+    { name: 'Website Visits', actual: campaignData.websiteVisits, target: 300 },
+    { name: 'Emergency Clicks', actual: campaignData.emergencyClicks, target: 60 },
+    { name: 'Safety Tips Views', actual: campaignData.safetyTipsViews, target: 40 },
+    { name: 'Demo Enquiries', actual: campaignData.enquiries, target: 20 },
+    { name: 'Engagement Rate', actual: campaignData.engagementRate, target: 50, unit: '%' }
   ].map((item) => (
     <div className="chart-item" key={item.name}>
       <p>
         <strong>{item.name}</strong>:
-        {' '}{item.actual} / {item.target}
+        {' '}{item.actual}{item.unit ?? ''} / {item.target}{item.unit ?? ''}
       </p>
 
       <div className="chart-bar-background">

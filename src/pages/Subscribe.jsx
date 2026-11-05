@@ -15,8 +15,8 @@ const [subscriptionMessage, setSubscriptionMessage] = useState('')
 
 
   return (
-    <div>
-      <h1>Subscribe to SafeDial 💚</h1>
+    <div className="subscribe-page">
+      <h1>Subscribe to SafeDial </h1>
 
       <h2>Stay Informed. Stay Prepared. Stay Safe.</h2>
       

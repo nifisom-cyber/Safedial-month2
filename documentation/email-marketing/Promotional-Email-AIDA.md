@@ -50,7 +50,7 @@ Visit SafeDial today and explore the emergency information available.
 
 **Explore SafeDial Now:**
 
-https://nifisom-cyber.github.io/SafeDial/
+https://nifisom-cyber.github.io/safedial-month2/campaign
 
 **SafeDial – Help Is One Dial Away!**
 

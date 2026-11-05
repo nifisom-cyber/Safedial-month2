@@ -16,7 +16,16 @@ function EmergencyServiceCard({ service }) {
 
       <h3>{service.name}</h3>
 
-      <p className="number">{service.number}</p>
+      {service.code && (
+        <p className="service-code">
+          Demo code <strong>{service.code}</strong>
+        </p>
+      )}
+
+      <p className="number">
+        <span className="service-number-label">Official number</span>
+        {service.number}
+      </p>
 
       <button
         type="button"
@@ -30,7 +39,7 @@ function EmergencyServiceCard({ service }) {
         href={`tel:${String(service.number).replace(/\D/g, '')}`}
         className="call-button"
       >
-        📞 Call {service.number}
+        📞 {service.code ? `Call via ${service.code}` : `Call ${service.number}`}
       </a>
     </div>
   )

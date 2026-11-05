@@ -1,10 +1,15 @@
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
+import safeDialLogo from '../ChatGPT Image Nov 2, 2026, 11_20_58 AM.png'
+import heroImage from './assets/woman-holding-cellphone.jpg'
+import phoneImage from './assets/cellphone.jpg'
+import featureImage from './assets/feature.jpg'
+import emergencyImage from './assets/police-and-ambulance.jpg.jpg'
 import EmergencyServiceCard from './components/EmergencyServiceCard.jsx'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 
-import Home from './pages/Home.jsx'
+import Campaign from './pages/Campaign.jsx'
 import EmergencyServices from './pages/EmergencyServices.jsx'
 import SafetyTips from './pages/SafetyTips.jsx'
 import Subscribe from './pages/Subscribe.jsx'
@@ -22,15 +27,16 @@ function App() {
   const location = useLocation()
 
   const [showEmergency, setShowEmergency] = useState(false)
+  const emergencyPanelRef = useRef(null)
   const [searchTerm, setSearchTerm] = useState('')
   const [email, setEmail] = useState('')
   const [subscriptionMessage, setSubscriptionMessage] = useState('')
   const [audience, setAudience] = useState('')
-  const [consent, setConsent] = useState(false)
+    const [consent, setConsent] = useState(false)
   const emergencyServices = [
-    { name: 'Police', number: '10111', icon: '🚔' },
-    { name: 'Ambulance', number: '10177', icon: '🚑' },
-    { name: 'Fire Department', number: '112', icon: '🚒' },
+      { name: 'Police', number: '10111', code: '*1#', icon: '🚔' },
+      { name: 'Ambulance', number: '10177', code: '*2#', icon: '🚑' },
+      { name: 'Fire Department', number: '112', code: '*3#', icon: '🚒' },
     { name: 'Emergency from a cellphone', number: '112', icon: '📱' },
   ]
   const filteredServices = emergencyServices.filter((service) =>
@@ -39,13 +45,60 @@ function App() {
     service.name.toLowerCase().includes(searchTerm.toLowerCase()),
   )
 
+  useEffect(() => {
+    if (showEmergency) {
+      emergencyPanelRef.current?.scrollIntoView({ behavior: 'instant', block: 'start' })
+    }
+  }, [showEmergency])
+
+  useEffect(() => {
+    const pageMetadata = {
+      '/': {
+        title: 'SafeDial | Help Is One Dial Away',
+        description: 'Find emergency contact information and practical safety tips with the SafeDial South African concept demo. No live dispatch.',
+      },
+      '/campaign': {
+        title: 'SafeDial Campaign | Emergency Contacts and Safety Tips',
+        description: 'Explore a South African safety concept, emergency contact information, and practical preparedness tips. Demo only; no live dispatch.',
+      },
+      '/services': {
+        title: 'Emergency Services | SafeDial',
+        description: 'Browse SafeDial emergency contact information for South Africa. Verify local numbers with official sources; demo only.',
+      },
+      '/safety-tips': {
+        title: 'Safety Tips | SafeDial',
+        description: 'Explore practical everyday safety and emergency preparedness tips from the SafeDial South African concept project.',
+      },
+      '/about': {
+        title: 'About SafeDial | South African Safety Concept',
+        description: 'Learn about the SafeDial project and its goal of making emergency information easier to find in South Africa.',
+      },
+      '/subscribe': {
+        title: 'Safety Updates | SafeDial',
+        description: 'Explore the SafeDial safety update subscription demonstration. No email addresses are stored and no emails are sent.',
+      },
+      '/enquiries': {
+        title: 'Safety Enquiries | SafeDial',
+        description: 'Send a non-urgent demonstration enquiry about SafeDial safety information. Do not use this form to report emergencies.',
+      },
+      '/analytics': {
+        title: 'Campaign Analytics | SafeDial',
+        description: 'View the SafeDial campaign KPI dashboard. All displayed campaign figures are fictional sample data.',
+      },
+    }
+    const metadata = pageMetadata[location.pathname] ?? pageMetadata['/']
+    document.title = metadata.title
+    document.querySelector('meta[name="description"]')?.setAttribute('content', metadata.description)
+  }, [location.pathname])
+
   return (
     <div className="app">
       <header className="navbar">
-        <h1>🛡️ SafeDial</h1>
+        <h1><img className="brand-logo" src={safeDialLogo} alt="" />SafeDial</h1>
 
         <nav>
           <Link to="/">Home</Link>
+          <Link to="/campaign">Campaign</Link>
           <Link to="/services">Emergency Services</Link>
           <Link to="/safety-tips">Safety Tips</Link>
           <Link to="/subscribe">Subscribe</Link>
@@ -65,7 +118,8 @@ function App() {
       <main>
         
 <Routes>
-  <Route path="/" element={<Home />} />
+  <Route path="/" element={null} />
+  <Route path="/campaign" element={<Campaign />} />
   <Route path="/services" element={<EmergencyServices />} />
   <Route path="/safety-tips" element={<SafetyTips />} />
   <Route path="/subscribe" element={<Subscribe />} />
@@ -98,15 +152,24 @@ function App() {
                 : 'View Emergency Numbers'}
             </button>
           </div>
-          <div className="hero-icon">🚨</div>
+          <img
+            className="hero-image"
+            src={heroImage}
+            alt="A woman holding a phone with SafeDial emergency contacts displayed"
+          />
         </section>
 
         {showEmergency && (
-          <section className="emergency-panel">
+          <section className="emergency-panel" ref={emergencyPanelRef}>
             <h2>Emergency Contact Numbers</h2>
             <p>
               If you are in immediate danger, contact the
               appropriate emergency service.
+            </p>
+            <p className="service-code-note">
+              Example SafeDial codes are not carrier services. Tap a Call button
+              to open your phone dialer with the official number; dialing a code
+              directly will not redirect the call.
             </p>
             <input
               type="text"
@@ -130,14 +193,12 @@ function App() {
               </p>
             )}
             <div className="service-grid">
-              <div className="service-grid">
-                {filteredServices.map((service) => (
-                  <EmergencyServiceCard
-                    key={service.name}
-                    service={service}
-                  />
-                ))}
-              </div>
+              {filteredServices.map((service) => (
+                <EmergencyServiceCard
+                  key={service.name}
+                  service={service}
+                />
+              ))}
             </div>
             <p className="notice">
               Emergency numbers can vary by service and location.
@@ -149,6 +210,11 @@ function App() {
         <section className="services" id="services">
           <h2>Emergency Assistance</h2>
           <p>Know where to turn when an emergency happens.</p>
+          <img
+            className="services-photo"
+            src={emergencyImage}
+            alt="South African police and ambulance services responding to emergencies"
+          />
           <div className="service-grid">
             <div className="service-card">
               <span className="service-icon">🚔</span>
@@ -176,6 +242,19 @@ function App() {
             Our goal is to help people access useful information
             quickly, especially during stressful situations.
           </p>
+          <img
+            className="about-image"
+            src={featureImage}
+            alt="SafeDial community safety network connecting families with emergency support"
+          />
+        </section>
+
+        <section className="phone-showcase" aria-label="SafeDial emergency contact app preview">
+          <img
+            src={phoneImage}
+            alt="SafeDial phone interface showing police, ambulance, fire, family, and SOS options"
+          />
+          <p>Quick access to the help and contacts that matter.</p>
         </section>
 
         <section className="newsletter" id="contact">
@@ -236,7 +315,7 @@ function App() {
       </main>
 
       <footer>
-        <h3>🛡️ SafeDial</h3>
+        <h3><img className="brand-logo" src={safeDialLogo} alt="" />SafeDial</h3>
         <p>Help Is One Dial Away.</p>
         <p>Emergency information at your fingertips.</p>
         <p>© 2026 SafeDial. All rights reserved.</p>

@@ -26,13 +26,14 @@ works correctly before the final CAPACITI presentation.
 
 | Emergency Services | Emergency numbers display | Passed |
 
-| Search Function | Filters emergency services | Not Tested |
-| Copy Number Button | Copies the selected number | Not Tested |
-| Safety Tips | Safety information displays | Not Tested |
-| Subscription Form | Validates user input | Not Tested |
-| Safety Enquiries | Saves demo enquiries | Not Tested |
-| Analytics Dashboard | Displays KPI cards and chart | Not Tested |
-| Mobile Responsiveness | Website fits mobile screens | Not Tested |
+| Search Function | Filters emergency services | Passed |
+| Copy Number Button | Copies the selected number | Passed |
+| Safety Tips | Safety information displays | Passed |
+| Subscription Form | Accepts valid demo input and displays confirmation | Passed |
+| Safety Enquiries | Accepts demo input and displays confirmation | Passed |
+| Analytics Dashboard | Displays five sample KPI cards and chart | Passed |
+| Campaign Landing Page | Opens and displays campaign content | Passed |
+| Mobile Responsiveness | Website fits mobile screens | Passed |
 
 ## 4. Testing Environment
 
@@ -41,6 +42,10 @@ https://nifisom-cyber.github.io/safedial-month2/
 
 Testing Method:
 Manual browser testing.
+
+Tests 1–10 describe the previously published site. Tests 11–12
+were completed in the local Vite preview after the campaign page
+and fifth KPI were added. Those changes still need a post-deploy check.
 
 ## 5. Testing Results
 
@@ -202,12 +207,8 @@ Status: Passed
 
 Result:
 I opened the Analytics Dashboard on the
-published SafeDial website.
-
-All four KPI cards displayed correctly.
-
-The green progress bars were visible
-and displayed correctly.
+published SafeDial website. The four KPI cards
+in that published version displayed correctly.
 
 No missing or overlapping content was identified.
 
@@ -244,6 +245,28 @@ Conclusion:
 SafeDial passed the mobile responsiveness
 test in the selected mobile view.
 
+
+### Test 11: Campaign Landing Page
+
+Status: Passed
+
+Result:
+The `/campaign` route opened in the local React preview.
+The campaign image and all four audience cards loaded.
+The primary links opened Emergency Services and Safety Tips.
+The page fitted a 390px mobile viewport without horizontal overflow.
+
+### Test 12: Five-KPI Dashboard
+
+Status: Passed
+
+Result:
+The updated dashboard displayed all five sample KPIs,
+including engagement rate, and all five chart rows.
+The mobile viewport had no horizontal overflow.
+
+Note:
+Dashboard figures remain fictional sample data. GA4 is not connected.
 
 ## 6. Bugs and Improvements
 

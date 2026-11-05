@@ -1,8 +1,13 @@
 
+import safeDialLogo from '../../ChatGPT Image Nov 2, 2026, 11_20_58 AM.png'
+
 function SafetyTips() {
   return (
-    <div>
-      <h1>Safety Tips 🛡️</h1>
+    <div className="safety-tips-page">
+      <h1>
+        <img className="safety-tips-logo" src={safeDialLogo} alt="" />
+        Safety Tips
+      </h1>
 
       <p>
         Learn how to stay safe and prepare

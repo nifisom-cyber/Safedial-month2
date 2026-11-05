@@ -14,6 +14,7 @@ simple, accessible and easy to understand.
 ## Website Features
 
 - Home Page
+- Campaign Landing Page
 - Emergency Services
 - Emergency Services Search Function
 - Copy Emergency Number Button
@@ -22,6 +23,14 @@ simple, accessible and easy to understand.
 - About Us
 - Safety Enquiries Form
 - Analytics Dashboard
+
+## Campaign Deliverables
+
+The campaign landing page is available at `/campaign` in the website navigation.
+
+The complete audience profile, funnel, SEO keyword plan, proposed search ad, budget assumptions, five social posts, content calendar, email schedule, KPIs, measurement plan, A/B hypothesis, and sample-data recommendations are documented in [SafeDial-Campaign-Deliverables.md](documentation/SafeDial-Campaign-Deliverables.md).
+
+Campaign results and analytics figures are fictional examples until a real campaign and analytics setup are completed.
 
 ## Technologies Used
 
@@ -35,6 +44,8 @@ simple, accessible and easy to understand.
 ## Live Website
 
 https://nifisom-cyber.github.io/safedial-month2/
+
+The campaign landing page and five-KPI dashboard updates in this workspace have been verified locally but are not yet published to the live URL.
 
 ## Testing
 

@@ -29,7 +29,7 @@ As a subscriber, you can look forward to:
 
 Visit SafeDial to explore emergency contact information:
 
-https://nifisom-cyber.github.io/SafeDial/
+https://nifisom-cyber.github.io/safedial-month2/campaign
 
 Stay safe and prepared!
 

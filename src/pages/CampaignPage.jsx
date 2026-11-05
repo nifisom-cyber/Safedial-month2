@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom'
 import heroImage from '../assets/woman-holding-cellphone.jpg'
+import campaignQr from '../assets/safedial-campaign-qr.png'
+
+const campaignUrl = 'https://nifisom-cyber.github.io/Safedial-month2/campaign'
 
 const audiences = [
   { title: 'Students and young adults', need: 'Mobile-first safety information for campus, commuting, and everyday plans.', channels: 'Mobile search, Instagram, campus and community WhatsApp groups.' },
@@ -104,6 +107,7 @@ function CampaignPage() {
         <a href="#social-plan">Social content</a>
         <a href="#email-plan">Email sequence</a>
         <a href="#measurement-plan">Measurement</a>
+        <a href="#share-campaign">Share</a>
       </nav>
 
       <section className="campaign-section" id="audience">
@@ -246,6 +250,21 @@ function CampaignPage() {
           <Link className="campaign-primary-link" to="/services">View emergency services</Link>
           <Link className="campaign-secondary-link" to="/safety-tips">Read safety tips</Link>
         </div>
+      </section>
+
+      <section className="campaign-qr-section" id="share-campaign">
+        <div>
+          <p className="campaign-eyebrow">Share SafeDial</p>
+          <h2>Scan to open the campaign page</h2>
+          <p>Share this QR code so others can open the SafeDial campaign information on their phones.</p>
+          <p className="campaign-qr-url">{campaignUrl}</p>
+          <a className="campaign-primary-link" href={campaignQr} download="safedial-campaign-qr.png">
+            Download QR code
+          </a>
+        </div>
+        <a className="campaign-qr-link" href={campaignUrl} aria-label="Open the SafeDial campaign page">
+          <img className="campaign-qr-image" src={campaignQr} alt="QR code linking to the SafeDial campaign page" />
+        </a>
       </section>
     </div>
   )

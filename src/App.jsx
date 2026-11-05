@@ -169,7 +169,8 @@ function App() {
             <p className="service-code-note">
               Example SafeDial codes are not carrier services. Tap a Call button
               to open your phone dialer with the official number; dialing a code
-              directly will not redirect the call.
+              directly will not redirect the call. Offline mode saves these
+              details, but a call still needs a supported network connection.
             </p>
             <input
               type="text"

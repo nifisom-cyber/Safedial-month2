@@ -24,6 +24,9 @@ const filteredServices = emergencyServices.filter((service) =>
             Find important emergency contact
             information quickly and easily. Example SafeDial codes are not
             carrier services; tap Call to open your dialer with the number below.
+            Offline mode can show saved information, but a call needs a supported
+            network connection. Satellite SOS or Wi-Fi calling depends on your
+            device, carrier, and location.
           </p>
           <h2>Help Is One Dial Away!</h2>
         </div>

@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SafeDial — Redirecting</title>
+  <script>
+    const base = "/safedial-month2/";
+    const currentPath = window.location.pathname;
+
+    const route = currentPath.startsWith(base)
+      ? currentPath.slice(base.length)
+      : "";
+
+    const destination =
+      base + "?redirect=" +
+      encodeURIComponent(
+        "/" + route + window.location.search + window.location.hash
+      );
+
+    window.location.replace(destination);
+  </script>
+</head>
+<body>
+  <p>Redirecting to SafeDial...</p>
+</body>
+</html>

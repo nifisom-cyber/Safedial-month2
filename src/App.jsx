@@ -9,7 +9,7 @@ import emergencyImage from './assets/police-and-ambulance.jpg.jpg'
 import EmergencyServiceCard from './components/EmergencyServiceCard.jsx'
 import { Routes, Route, Link, useLocation } from 'react-router-dom'
 
-import Campaign from './pages/Campaign.jsx'
+import Campaign from './pages/CampaignPage.jsx'
 import EmergencyServices from './pages/EmergencyServices.jsx'
 import SafetyTips from './pages/SafetyTips.jsx'
 import Subscribe from './pages/Subscribe.jsx'

@@ -937,6 +937,15 @@ footer {
   color: #000000;
 }
 
+.enquiries-page textarea {
+  color: #000000;
+}
+
+.enquiries-page textarea::placeholder {
+  color: #666666;
+  opacity: 1;
+}
+
 .about-page h2,
 .subscribe-page h2,
 .enquiries-page h2,

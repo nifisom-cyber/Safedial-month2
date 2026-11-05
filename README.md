@@ -1,4 +1,3 @@
-
 # SafeDial — Help Is One Dial Away
 
 ## About SafeDial
@@ -45,7 +44,7 @@ Campaign results and analytics figures are fictional examples until a real campa
 
 https://nifisom-cyber.github.io/safedial-month2/
 
-The campaign landing page and five-KPI dashboard updates in this workspace have been verified locally but are not yet published to the live URL.
+The campaign landing page and five-KPI dashboard are included in the live application. The dashboard figures are fictional examples; GA4 is not connected.
 
 ## Testing
 
